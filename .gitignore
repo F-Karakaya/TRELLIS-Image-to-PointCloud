@@ -399,3 +399,4 @@ FodyWeavers.xsd
 
 # Large vendor libraries (not committed)
 kaolin/
+trellis/representations/mesh/flexicubes/
