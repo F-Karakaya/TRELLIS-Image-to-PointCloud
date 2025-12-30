@@ -399,4 +399,6 @@ FodyWeavers.xsd
 
 # Large vendor libraries (not committed)
 kaolin/
+
+# Excluded vendor / submodule directories
 trellis/representations/mesh/flexicubes/
