@@ -25,25 +25,41 @@ All additions are located in clearly separated directories and do **not modify t
 
 ## 🖼️ Input Images → 3D Point Clouds
 
-### Input Images (`ply_folder/`)
+In this section, each example object is presented with:
+1. Its **input RGB image**
+2. The corresponding **3D point cloud visualization video** generated from the converted `.ply` file
 
-The following example images are used as inputs for the image-to-pointcloud pipeline:
-
-<p float="left">
-  <img src="ply_folder/phone_holder.jpg" width="45%" />
-  <img src="ply_folder/screw.jpg" width="45%" />
-</p>
-
-Each image is processed independently and converted into a corresponding `.ply` file using the TRELLIS Image-to-3D pipeline.
+This layout makes it easy to directly compare 2D inputs with their reconstructed 3D representations.
 
 ---
 
-### Generated Outputs (PLY → Visualization)
+### 📌 Example 1 — Phone Holder
 
-The generated `.ply` files are visualized as rotating 3D point clouds.
+#### Input Image (`phone_holder.jpg`)
 
-👉 **PLACE YOUR VIDEO LINK HERE**  
-*(This video should demonstrate the rendered `.ply` point clouds generated from the images above.)*
+<img src="ply_folder/phone_holder.jpg" width="50%" />
+
+This image is processed by the TRELLIS Image-to-3D pipeline and converted into a 3D Gaussian point cloud stored as a `.ply` file.
+
+#### Generated 3D Point Cloud (PLY → Video)
+
+👉 **PLACE VIDEO LINK FOR `phone_holder.ply` HERE**  
+*(This video should show the rotating 3D point cloud reconstructed from `phone_holder.jpg`.)*
+
+---
+
+### 📌 Example 2 — Screw
+
+#### Input Image (`screw.jpg`)
+
+<img src="ply_folder/screw.jpg" width="50%" />
+
+This image is independently processed using the same pipeline configuration, producing a separate `.ply` point cloud output.
+
+#### Generated 3D Point Cloud (PLY → Video)
+
+👉 **PLACE VIDEO LINK FOR `screw.ply` HERE**  
+*(This video should show the rotating 3D point cloud reconstructed from `screw.jpg`.)*
 
 ---
 
