@@ -396,9 +396,3 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
-
-# Large vendor libraries (not committed)
-kaolin/
-
-# Excluded vendor / submodule directories
-trellis/representations/mesh/flexicubes/
