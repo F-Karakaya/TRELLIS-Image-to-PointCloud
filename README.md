@@ -43,7 +43,8 @@ This image is processed by the TRELLIS Image-to-3D pipeline and converted into a
 
 #### Generated 3D Point Cloud (PLY → Video)
 
-👉 **PLACE VIDEO LINK FOR `phone_holder.ply` HERE**  
+https://github.com/user-attachments/assets/3d2c1e34-7c70-4336-884c-982ec7ed558f
+
 *(This video should show the rotating 3D point cloud reconstructed from `phone_holder.jpg`.)*
 
 ---
@@ -58,7 +59,8 @@ This image is independently processed using the same pipeline configuration, pro
 
 #### Generated 3D Point Cloud (PLY → Video)
 
-👉 **PLACE VIDEO LINK FOR `screw.ply` HERE**  
+https://github.com/user-attachments/assets/a09e0d25-7fc9-4389-83aa-4e1000b3e1fb
+
 *(This video should show the rotating 3D point cloud reconstructed from `screw.jpg`.)*
 
 ---
