@@ -1,3 +1,147 @@
+<!-- ========================================================= -->
+<!-- PROJECT-SPECIFIC EXTENSIONS (THIS FORK)                   -->
+<!-- ========================================================= -->
+
+# 🔧 Image-to-PointCloud Pipeline (This Fork)
+
+This repository is a **practical extension and application layer** built on top of the original **TRELLIS** framework.  
+In this fork, we focus specifically on **single-image to point cloud (.PLY) generation** and **lightweight visualization**, providing a clean and reproducible workflow for image-based 3D Gaussian extraction.
+
+Our contributions are intentionally minimal, well-isolated, and non-intrusive to the original TRELLIS codebase.
+
+---
+
+## 🚀 What We Added
+
+In this fork, we implemented a **complete end-to-end pipeline** that:
+
+1. Converts **single RGB images (.jpg)** into **3D Gaussian point clouds (.ply)** using TRELLIS pretrained models
+2. Stores generated `.ply` outputs in a dedicated output directory
+3. Visualizes generated point clouds using **Open3D**
+
+All additions are located in clearly separated directories and do **not modify the original TRELLIS core logic**.
+
+---
+
+## 🖼️ Input Images → 3D Point Clouds
+
+### Input Images (`ply_folder/`)
+
+The following example images are used as inputs for the image-to-pointcloud pipeline:
+
+<p float="left">
+  <img src="ply_folder/phone_holder.jpg" width="45%" />
+  <img src="ply_folder/screw.jpg" width="45%" />
+</p>
+
+Each image is processed independently and converted into a corresponding `.ply` file using the TRELLIS Image-to-3D pipeline.
+
+---
+
+### Generated Outputs (PLY → Visualization)
+
+The generated `.ply` files are visualized as rotating 3D point clouds.
+
+👉 **PLACE YOUR VIDEO LINK HERE**  
+*(This video should demonstrate the rendered `.ply` point clouds generated from the images above.)*
+
+---
+
+## 🧠 Pipeline Overview
+
+The workflow introduced in this fork consists of two main scripts:
+
+1. **Image → PLY conversion**
+2. **PLY visualization**
+
+Both scripts are designed to be:
+- reproducible
+- minimal
+- easy to integrate into research or production workflows
+
+---
+
+## 📁 Added Directory Structure
+
+Below is the directory structure introduced in this fork, along with a brief explanation of each component:
+
+```text
+scripts/
+├── image_to_ply.py        (Runs TRELLIS image-to-3D pipeline and exports .ply)
+└── visualize_ply.py       (Visualizes .ply point clouds using Open3D)
+
+ply_folder/
+├── phone_holder.jpg       (Input RGB image)
+├── phone_holder.ply       (Generated 3D Gaussian point cloud)
+├── screw.jpg              (Input RGB image)
+└── screw.ply              (Generated 3D Gaussian point cloud)
+```
+
+---
+
+## 🧩 Script Details
+
+### 1️⃣ `image_to_ply.py` — Image to Point Cloud
+
+This script:
+- Loads a pretrained **TRELLIS Image-to-3D model**
+- Accepts a single RGB image as input
+- Runs the TRELLIS inference pipeline
+- Exports the generated **3D Gaussians as a `.ply` file**
+
+Key characteristics:
+- Deterministic inference using a fixed random seed
+- Configurable sampling parameters
+- Explicit GPU usage
+- Clean performance logging
+
+Typical usage:
+```bash
+python scripts/image_to_ply.py
+```
+
+The output `.ply` file is automatically saved into the `ply_folder/` directory.
+
+---
+
+### 2️⃣ `visualize_ply.py` — Point Cloud Visualization
+
+This script provides a lightweight visualization utility using **Open3D**.
+
+It:
+- Loads a `.ply` point cloud
+- Prints basic statistics (number of points, coordinates)
+- Opens an interactive 3D visualization window
+
+Typical usage:
+```bash
+python scripts/visualize_ply.py
+```
+
+This allows fast qualitative inspection of generated 3D Gaussians without any additional rendering pipeline.
+
+---
+
+## 🧬 External Dependencies (Submodules)
+
+To keep this repository lightweight and clean, large external dependencies are included as **Git submodules**:
+
+- **Kaolin** → https://github.com/NVIDIAGameWorks/kaolin  
+- **FlexiCubes** → https://github.com/MaxtirError/FlexiCubes  
+
+These directories act as **pointers to the official repositories** and are **not vendored** into this codebase.
+
+When cloning this repository, make sure to use:
+```bash
+git clone --recurse-submodules <REPO_URL>
+```
+
+---
+
+<!-- ========================================================= -->
+<!-- ORIGINAL TRELLIS README (UNCHANGED BELOW)                 -->
+<!-- ========================================================= -->
+
 <img src="assets/logo.webp" width="100%" align="center">
 <h1 align="center">Structured 3D Latents<br>for Scalable and Versatile 3D Generation</h1>
 <p align="center"><a href="https://arxiv.org/abs/2412.01506"><img src='https://img.shields.io/badge/arXiv-Paper-red?logo=arxiv&logoColor=white' alt='arXiv'></a>
